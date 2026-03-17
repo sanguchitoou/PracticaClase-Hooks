@@ -96,12 +96,26 @@ function App() {
       />
  
       <Boton label="Agregar tarea" onClick={agregarTarea} />
-      <h2>Lista de tareas:</h2>
-      <ul>
-        {tareas.map((tarea, index) => (
-          <li key={index}>{tarea}</li>
-        ))}
-      </ul>
+
+      <div className="tareas-container">
+        <div className="columna">
+          <h2>Tareas Pendientes</h2>
+          <ul>
+            {tareas.map((tarea, index) => (
+              <li key={index}>{tarea}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="columna">
+          <h2>Tareas Tareas completadas</h2>
+          <ul>
+            {tareas.map((tarea, index) => (
+              <li key={index}>{tarea}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </>
   )
 }
