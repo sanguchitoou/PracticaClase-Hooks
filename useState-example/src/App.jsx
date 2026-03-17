@@ -50,12 +50,14 @@ function App() {
 
   //Código para el administrador de tareas
   const [tarea, setTarea] = useState("")
+  const [status, setStatus] = useState("")
   const [tareas, setTareas] = useState([])
 
   //Agregar valores al arreglo
   const agregarTarea = () =>{
     if (tarea.trim() !== ""){
-      setTareas([...tareas, tarea]);
+      setTareas([...tareas, tarea, status]);
+      setStatus("Pendiente")
       setTarea("");
     }
   }
@@ -108,7 +110,7 @@ function App() {
         </div>
 
         <div className="columna">
-          <h2>Tareas Tareas completadas</h2>
+          <h2>Tareas Completadas</h2>
           <ul>
             {tareas.map((tarea, index) => (
               <li key={index}>{tarea}</li>
